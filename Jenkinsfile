@@ -41,9 +41,13 @@ pipeline {
 
 			steps{
 					print " ----- Set Environment ----- "
+				script {
+						PROPS = readProperties file: 'properties/Jenkinsfile.properties'
+						GIT_URL=PROPS['GIT_URL']	
 
-	}		
-	}
+				}
+			}		
+		}
 			
 		
 		stage ('Checkout SourceCode') {				
