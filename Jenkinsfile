@@ -42,7 +42,7 @@ pipeline {
 			steps{
 					print " ----- Set Environment ----- "
 				script {
-						PROPS = readProperties file: 'properties\Jenkinsfile.properties'
+						PROPS = readProperties file: 'properties/Jenkinsfile.properties'
 						GIT_URL=PROPS['GIT_URL']
 						CI_TOOLS_BRANCH=PROPS['CI_TOOLS_BRANCH']
 						GIT_CREDENTIALS_ID=PROPS['GIT_CREDENTIALS_ID']
