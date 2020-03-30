@@ -31,7 +31,7 @@ def DIRECTORY_TEST_REPORTS
 
 pipeline {
 	environment {
-		SAG_HOME="C:\SoftwareAG\v10_3"
+		SAG_HOME="C:/SoftwareAG/v10_3"
 	}
 	
 	agent any
