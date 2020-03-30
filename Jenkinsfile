@@ -128,6 +128,10 @@ pipeline {
 
 def gitCheckout(branchDir, branchName, credentialsId, gitRepoURL) {
 	dir ("$branchDir") {
+		pwd()
+		echo "$branchName"
+		echo "$credentialsId"
+		echo "$gitRepoURL"
        	git branch: "$branchName", credentialsId: "$credentialsId", url: "$gitRepoURL"
     }
 }
