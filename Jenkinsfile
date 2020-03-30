@@ -79,10 +79,7 @@ pipeline {
 		stage ('Checkout SourceCode') {				
 			steps {
 					print " ----- SourceCode Checkout -----"
-				script {
-					GIT_CREDENTIALS_ID=PROPS['GIT_CREDENTIALS_ID']					
-				}
-				gitCheckout("${JENKINS_WS}/source/${IS_REPO_HOME}", "${IS_BRANCH}", "${GIT_CREDENTIALS_ID}", "${GIT_URL}")
+
 				
 			}
 			}
@@ -91,7 +88,7 @@ pipeline {
 		stage ('Create Build') {				
 			steps {
 					print " ----- Create Build ----- "
-				createBuild("${SAG_HOME}","${ABE_HOME}","${BUILD_VERSION}","${JENKINS_WS}")
+
 				
 			}
 		}
@@ -100,10 +97,10 @@ pipeline {
 		stage ('Deploy Build') {				
 			steps {
 					print " ----- Create Project ----- "
-				createProject("${SAG_HOME}", "${ABE_HOME}", "${SAG_HOME}/${DEPLOYER_HOME}", "${BUILD_VERSION}", "${JENKINS_WS}/source/utils/ProjectAutomatorIS.xml", "${JENKINS_WS}/source/utils/ProjectAutomatorIS.tpl", "${DEPLOYER_HOST}", "${DEPLOYER_PORT}", "${DEPLOYER_USER}", "${DEPLOYER_PWD}", "${PROJECT_NAME_IS}", "${DEP_SET_IS}", "${DEP_MAP_IS}", "${DEP_CAN_IS}", "${REPO_NAME}", "${JENKINS_WS}/build/is", "${TARGET_ALIAS_IS}", "${TARGET_HOST_IS}", "${TARGET_PORT_IS}", "${TARGET_USER_IS}", "${TARGET_PWD_IS}", "${TARGET_VERSION_IS}","${PKG_PREFIX}")
+
 				
 					print " ----- Deploy Build ----- "
-				deployBuild("${SAG_HOME}/${DEPLOYER_HOME}","${PROJECT_NAME_IS}","${DEP_CAN_IS}","${DEPLOYER_HOST}", "${DEPLOYER_PORT}", "${DEPLOYER_USER}", "${DEPLOYER_PWD}")
+
 				
 			}
 		}		
@@ -111,7 +108,7 @@ pipeline {
 	
 		stage ('Run Unit Tests') {
 			steps {
-				runUnitTests("${SAG_HOME}", "${ABE_HOME}", "${JENKINS_WS}", "${DIRECTORY_TEST_REPORTS}")
+
 			}
 		}		
 
