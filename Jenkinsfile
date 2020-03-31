@@ -181,7 +181,7 @@ def createProject(sagHome, abeHome, deployerHome, buildVersion, projectAutomator
 		echo "version: $version"
 		echo "assetPrefix: $assetPrefix"
 
-				"$sagHome/common/lib/ant/bin/ant -file $abeHome/master_build/build.xml createProjectReposiotry \
+				"$sagHome/common/lib/ant/bin/ant -file build.xml createProjectReposiotry \
 				-Dautomator.file=$projectAutomatorFile \
 				-Dautomator.file.tpl=$projectAutomatorTemplate \
 				-Ddeployer.home=$deployerHome \
