@@ -108,7 +108,7 @@ pipeline {
 		stage ('Deploy Build') {				
 			steps {
 					print " ----- Create Project ----- "
-				createProject("${SAG_HOME}", "${ABE_HOME}", "${SAG_HOME}/${DEPLOYER_HOME}", "${BUILD_VERSION}", "${JENKINS_WS}/source/utils/ProjectAutomatorIS.xml", "${JENKINS_WS}/source/utils/ProjectAutomatorIS.tpl", "${DEPLOYER_HOST}", "${DEPLOYER_PORT}", "${DEPLOYER_USER}", "${DEPLOYER_PWD}", "${PROJECT_NAME_IS}", "${DEP_SET_IS}", "${DEP_MAP_IS}", "${DEP_CAN_IS}", "${REPO_NAME}", "${JENKINS_WS}/build/is", "${TARGET_ALIAS_IS}", "${TARGET_HOST_IS}", "${TARGET_PORT_IS}", "${TARGET_USER_IS}", "${TARGET_PWD_IS}", "${TARGET_VERSION_IS}","${PKG_PREFIX}")
+				createProject("${SAG_HOME}", "${ABE_HOME}", "${SAG_HOME}/${DEPLOYER_HOME}", "${BUILD_VERSION}", "ProjectAutomatorIS.xml", "ProjectAutomatorIS.tpl", "${DEPLOYER_HOST}", "${DEPLOYER_PORT}", "${DEPLOYER_USER}", "${DEPLOYER_PWD}", "${PROJECT_NAME_IS}", "${DEP_SET_IS}", "${DEP_MAP_IS}", "${DEP_CAN_IS}", "${REPO_NAME}", "${JENKINS_WS}/build/is", "${TARGET_ALIAS_IS}", "${TARGET_HOST_IS}", "${TARGET_PORT_IS}", "${TARGET_USER_IS}", "${TARGET_PWD_IS}", "${TARGET_VERSION_IS}","${PKG_PREFIX}")
 				
 					print " ----- Deploy Build ----- "
 				deployBuild("${SAG_HOME}/${DEPLOYER_HOME}","${PROJECT_NAME_IS}","${DEP_CAN_IS}","${DEPLOYER_HOST}", "${DEPLOYER_PORT}", "${DEPLOYER_USER}", "${DEPLOYER_PWD}")
