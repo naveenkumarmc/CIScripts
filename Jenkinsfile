@@ -157,6 +157,30 @@ def createBuild(sagHome, abeHome, buildVersion, ciWorkspace) {
 
 def createProject(sagHome, abeHome, deployerHome, buildVersion, projectAutomatorFile, projectAutomatorTemplate, deployerHost, deployerPort, deployerUser, deployerPwd, projName, depSetName, depMapName, depCanName, deployerRepoName, deployerRepoPath, serverAlias, serverHost, serverPort, user, pwd, version, assetPrefix) {
 
+		echo "sagHome: $sagHome"
+		echo "abeHome: $abeHome"
+		echo "deployerHome: $deployerHome"
+		echo "buildVersion: $buildVersion"
+		echo "projectAutomatorFile: $projectAutomatorFile"
+		echo "projectAutomatorTemplate: $projectAutomatorTemplate"
+		echo "deployerHost: $deployerHost"
+		echo "deployerPort: $deployerPort"
+		echo "deployerUser: $deployerUser"
+		echo "deployerPwd: $deployerPwd"
+		echo "projName: $projName"
+		echo "depSetName: $depSetName"
+		echo "depMapName: $depMapName"
+		echo "depCanName: $depCanName"
+		echo "deployerRepoName: $deployerRepoName"
+		echo "deployerRepoPath: $deployerRepoPath"
+		echo "serverAlias: $serverAlias"
+		echo "serverHost: $serverHost"
+		echo "serverPort: $serverPort"
+		echo "user: $user"
+		echo "pwd: $pwd"
+		echo "version: $version"
+		echo "assetPrefix: $assetPrefix"
+
 				"$sagHome/common/lib/ant/bin/ant -file $abeHome/master_build/build.xml createProjectReposiotry \
 				-Dautomator.file=$projectAutomatorFile \
 				-Dautomator.file.tpl=$projectAutomatorTemplate \
