@@ -157,7 +157,7 @@ def createBuild(sagHome, abeHome, buildVersion, ciWorkspace) {
 
 def createProject(sagHome, abeHome, deployerHome, buildVersion, projectAutomatorFile, projectAutomatorTemplate, deployerHost, deployerPort, deployerUser, deployerPwd, projName, depSetName, depMapName, depCanName, deployerRepoName, deployerRepoPath, serverAlias, serverHost, serverPort, user, pwd, version, assetPrefix) {
 
-				sh "$sagHome/common/lib/ant/bin/ant -file $abeHome/master_build/build.xml createProjectReposiotry \
+				"$sagHome/common/lib/ant/bin/ant -file $abeHome/master_build/build.xml createProjectReposiotry \
 				-Dautomator.file=$projectAutomatorFile \
 				-Dautomator.file.tpl=$projectAutomatorTemplate \
 				-Ddeployer.home=$deployerHome \
