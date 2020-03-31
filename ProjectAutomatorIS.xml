@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DeployerSpec exitOnError="true" sourceType="Repository">
 	<DeployerServer>
-		<host>10.60.134.90:5555</host>
+		<host>SAG-BD0KMC2.eur.ad.sag:5555</host>
 		<user>Administrator</user>
 		<pwd>manage</pwd>
 	</DeployerServer>
   <Environment>
 		<IS>
 			<isalias name="DEV">
-				<host>10.60.134.90</host>
+				<host>SAG-BD0KMC2.eur.ad.sag</host>
 				<port>5555</port>
 				<user>Administrator</user>
 				<pwd>manage</pwd>
@@ -21,7 +21,7 @@
 		<Repository>
 			<repalias name="IS_REPO">
 				<type>FlatFile</type>
-				<urlOrDirectory>/opt/devops/jenkins_workspace/build/is</urlOrDirectory>
+				<urlOrDirectory>C:/Rananjoy/SAG/Projects/Demo/CICD/jenkins_workspace/build/is</urlOrDirectory>
 				<Test>false</Test>
 			</repalias>
 		</Repository>	
