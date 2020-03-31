@@ -1,7 +1,7 @@
 def JDK_HOME
 def PROPS
 def GIT_URL
-def CI_TOOLS_BRANCH
+/* def CI_TOOLS_BRANCH */
 def IS_BRANCH
 def GIT_CREDENTIALS_ID
 def JENKINS_WS
@@ -44,7 +44,7 @@ pipeline {
 				script {
 						PROPS = readProperties file: 'properties/Jenkinsfile.properties'
 						GIT_URL=PROPS['GIT_URL']
-						CI_TOOLS_BRANCH=PROPS['CI_TOOLS_BRANCH']
+						/* CI_TOOLS_BRANCH=PROPS['CI_TOOLS_BRANCH'] */
 						GIT_CREDENTIALS_ID=PROPS['GIT_CREDENTIALS_ID']
 						JENKINS_WS=PROPS['JENKINS_WS']
 						IS_REPO_HOME=PROPS['IS_REPO_HOME']
@@ -138,7 +138,7 @@ def gitCheckout(branchDir, branchName, credentialsId, gitRepoURL) {
 
 
 def createBuild(sagHome, abeHome, buildVersion, ciWorkspace) {
-	sh "$abeHome/bin/build.sh\
+	bat "$abeHome/bin/build.bat\
          -Dsag.install.dir=$sagHome\
          -Dbuild.source.dir=$ciWorkspace/source/is\
          -Dbuild.output.dir=$ciWorkspace/build/is\
@@ -147,9 +147,9 @@ def createBuild(sagHome, abeHome, buildVersion, ciWorkspace) {
          -Denable.build.IS=true\
          -Denable.archive=true"
 	
-	dir ("$ciWorkspace/build/is") {
+	/* dir ("$ciWorkspace/build/is") {
        	sh "chmod 777 * "
-    } 	 
+    } */	 
 		 
 }
 
