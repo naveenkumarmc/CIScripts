@@ -215,7 +215,7 @@ def runUnitTests(sagHome, abeHome, ciWorkspace, testReportsDir) {
 	echo "*************************"
 	pwd()
 	echo "*************************"
-	bat "$sagHome/common/lib/ant/bin/ant.bat -file $abeHome/master_build/build-runtestsuite.xml run-test-suite -DWORKSPACE=$ciWorkspace"	
+	bat "$sagHome/common/lib/ant/bin/ant.bat -file C:/Rananjoy/SAG/Projects/Demo/CICD/CIScripts/build-runtestsuite.xml run-test-suite -DWORKSPACE=$ciWorkspace"	
 }
 
 
