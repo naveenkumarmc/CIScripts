@@ -180,6 +180,10 @@ def createProject(sagHome, abeHome, deployerHome, buildVersion, projectAutomator
 		echo "pwd: $pwd"
 		echo "version: $version"
 		echo "assetPrefix: $assetPrefix"
+		echo "*************************"
+		pwd()
+		echo "*************************"
+		
 
 				bat "$sagHome/common/lib/ant/bin/ant.bat -file build.xml createProjectReposiotry \
 				-Dautomator.file=$projectAutomatorFile \
@@ -211,7 +215,10 @@ def deployBuild(deployerHome, projName, depCanName, deployerHost, deployerPort, 
 }
 
 def runUnitTests(sagHome, abeHome, ciWorkspace, testReportsDir) {
-	bat "$sagHome/common/lib/ant/bin/ant -file $abeHome/master_build/build-runtestsuite.xml run-test-suite -DWORKSPACE=$ciWorkspace"	
+	echo "*************************"
+	pwd()
+	echo "*************************"
+	bat "$sagHome/common/lib/ant/bin/ant.bat -file $abeHome/master_build/build-runtestsuite.xml run-test-suite -DWORKSPACE=$ciWorkspace"	
 }
 
 
