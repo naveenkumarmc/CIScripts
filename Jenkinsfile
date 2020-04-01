@@ -207,11 +207,11 @@ def createProject(sagHome, abeHome, deployerHome, buildVersion, projectAutomator
 
 
 def deployBuild(deployerHome, projName, depCanName, deployerHost, deployerPort, deployerUser, deployerPwd) {
-	"$deployerHome/bin/Deployer.bat --deploy -project $projName -dc $depCanName -host $deployerHost -port $deployerPort -user $deployerUser -pwd $deployerPwd"
+	bat "$deployerHome/bin/Deployer.bat --deploy -project $projName -dc $depCanName -host $deployerHost -port $deployerPort -user $deployerUser -pwd $deployerPwd"
 }
 
 def runUnitTests(sagHome, abeHome, ciWorkspace, testReportsDir) {
-	"$sagHome/common/lib/ant/bin/ant -file $abeHome/master_build/build-runtestsuite.xml run-test-suite -DWORKSPACE=$ciWorkspace"	
+	bat "$sagHome/common/lib/ant/bin/ant -file $abeHome/master_build/build-runtestsuite.xml run-test-suite -DWORKSPACE=$ciWorkspace"	
 }
 
 
