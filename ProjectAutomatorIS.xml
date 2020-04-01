@@ -1,17 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<DeployerSpec exitOnError="true" sourceType="Repository">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><DeployerSpec exitOnError="true" sourceType="Repository">
 	<DeployerServer>
 		<host>SAG-BD0KMC2.eur.ad.sag:5555</host>
 		<user>Administrator</user>
-		<pwd>manage</pwd>
+		<pwd>{AES}Y5IgMqjfvkgbg7p5VUZztw==</pwd>
 	</DeployerServer>
   <Environment>
 		<IS>
-			<isalias name="DEV">
+			<isalias name="local">
 				<host>SAG-BD0KMC2.eur.ad.sag</host>
 				<port>5555</port>
 				<user>Administrator</user>
-				<pwd>manage</pwd>
+				<pwd>{AES}Y5IgMqjfvkgbg7p5VUZztw==</pwd>
 				<useSSL>false</useSSL>
 				<version>10.3</version>
 				<installDeployerResource>true</installDeployerResource>
@@ -19,30 +18,30 @@
 			</isalias>
 		</IS>
 		<Repository>
-			<repalias name="IS_REPO">
+			<repalias name="Fibonachi">
 				<type>FlatFile</type>
-				<urlOrDirectory>C:/Rananjoy/SAG/Projects/Demo/CICD/jenkins_workspace/build/is</urlOrDirectory>
+				<urlOrDirectory>C:\Rananjoy\SAG\Projects\Demo\CICD\jenkins_workspace\build\is</urlOrDirectory>
 				<Test>false</Test>
 			</repalias>
 		</Repository>	
 	</Environment>
 
 	<Projects projectPrefix="">
-		<Project description="Deployment of IS artefacts" name="MRD_IS_v1.0" overwrite="true" type="Repository">
+		<Project description="Deployment of IS artefacts" name="MRD_IS_v1.6" overwrite="true" type="Repository">
 			<ProjectProperties>
-				<Property name= "projectLocking">false</Property>
-				<Property name= "concurrentDeployment">true</Property>
-				<Property name= "ignoreMissingDependencies">true</Property>
-				<Property name= "isTransactionalDeployment">true</Property>
+				<Property name="projectLocking">false</Property>
+				<Property name="concurrentDeployment">true</Property>
+				<Property name="ignoreMissingDependencies">true</Property>
+				<Property name="isTransactionalDeployment">true</Property>
 			</ProjectProperties>
 
-			<DeploymentSet autoResolve="ignore" description="IS Deployment Set" name="ISDepSet" srcAlias="IS_REPO">
+			<DeploymentSet autoResolve="ignore" description="IS Deployment Set" name="ISDepSet" srcAlias="Fibonachi">
 				<!--  The Composite and Component Constructs are independant of the Namespace Types. The Project Automator will support all the Namespace Types -->		
-				<Composite name="MdrDbtOmniCIFInq*" srcAlias="IS_REPO" type="IS"/>
+				<Composite name="Fib*" srcAlias="Fibonachi" type="IS"/>
 			</DeploymentSet>
 			<DeploymentMap description="IS Deployment Map" name="ISDepMap"/>			
 			<MapSetMapping mapName="ISDepMap" setName="ISDepSet">				
-				<alias type="IS">DEV</alias>
+				<alias type="IS">local</alias>
 			</MapSetMapping>
 			<DeploymentCandidate description="IS Deployment Candidate" mapName="ISDepMap" name="ISDepCan"/>
 		</Project>

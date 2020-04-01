@@ -528,9 +528,16 @@
         </filterchain>
 		</copy>
 		<echo message="Automater file name ....${automator.file}"/>
+
+		<!-- Rananjoy: For some reason if-else statement was not getting executed. So moved the Window's piece outside -->
+		<exec executable="cmd" dir="${deployer.home}/bin" failonerror="true">
+			<arg value="/c" /> 
+			<arg value="projectautomator.bat"/>
+			<arg value="${automator.file}" />
+		</exec>
 		
-		<if>
-			<os family="windows"/>
+		<!--if>
+			<os family="WINDOWS"/>
 			<then>
 				<exec executable="cmd" dir="${deployer.home}/bin" failonerror="true">
 					<arg value="/c" /> 
@@ -539,12 +546,13 @@
 				</exec>
 			</then>
 		<else>
-				<exec executable="/bin/bash" dir="${deployer.home}/bin" failonerror="true">
-					<arg value="projectautomatorUnix.sh"/>
+		<echo message="***** Inside else loop *****"/>
+				<exec executable="cmd" dir="${deployer.home}/bin" failonerror="true">
+					<arg value="projectautomator.bat"/>
 					<arg value="${automator.file}" />
 				</exec>
 		</else>
-		</if>
+		</if-->
 		
 	</target>
 	
