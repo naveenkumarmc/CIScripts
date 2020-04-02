@@ -209,7 +209,7 @@ def deployBuild(deployerHome, projName, depCanName, deployerHost, deployerPort, 
 
 def runUnitTests(sagHome, abeHome, ciWorkspace, testReportsDir) {
 
-	bat "$sagHome/common/lib/ant/bin/ant.bat -file C:/Rananjoy/SAG/Projects/Demo/CICD/CIScripts/build-runtestsuite.xml run-test-suite -DWORKSPACE=$ciWorkspace"	
+	bat "$sagHome/common/lib/ant/bin/ant.bat -file C:/Rananjoy/SAG/Projects/Demo/CICD/CIScripts/run-composite-runner.xml composite-runner-all-tests"	
 }
 
 
