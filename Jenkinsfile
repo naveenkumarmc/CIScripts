@@ -131,7 +131,6 @@ pipeline {
 
 def gitCheckout(branchDir, branchName, credentialsId, gitRepoURL) {
 	dir ("$branchDir") {
-		pwd()
 		echo "$branchName"
 		echo "$credentialsId"
 		echo "$gitRepoURL"
@@ -209,9 +208,7 @@ def deployBuild(deployerHome, projName, depCanName, deployerHost, deployerPort, 
 }
 
 def runUnitTests(sagHome, abeHome, ciWorkspace, testReportsDir) {
-	echo "*************************"
-	pwd()
-	echo "*************************"
+
 	bat "$sagHome/common/lib/ant/bin/ant.bat -file C:/Rananjoy/SAG/Projects/Demo/CICD/CIScripts/build-runtestsuite.xml run-test-suite -DWORKSPACE=$ciWorkspace"	
 }
 
