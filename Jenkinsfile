@@ -119,6 +119,7 @@ pipeline {
 	
 		stage ('Run Unit Tests') {
 			steps {
+				print " ----- Run Unit Tests ----- "
 				runUnitTests("${SAG_HOME}", "${ABE_HOME}", "${JENKINS_WS}", "${DIRECTORY_TEST_REPORTS}")
 			}
 		}		
