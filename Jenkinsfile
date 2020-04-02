@@ -140,15 +140,8 @@ def gitCheckout(branchDir, branchName, credentialsId, gitRepoURL) {
 
 
 def createBuild(sagHome, abeHome, buildVersion, ciWorkspace) {
-	bat "$abeHome/bin/build.bat \
-		-Dsag.install.dir=$sagHome \
-        -Dbuild.source.dir=$ciWorkspace/source/is/assets/IS/Packages \
-        -Dbuild.output.dir=$ciWorkspace/build/is \
-        -Dbuild.version=$buildVersion \
-        -Dbuild.log.fileName=$ciWorkspace/logs/log_" + "$buildVersion" + ".txt \
-        -Denable.build.IS=true \
-        -Denable.archive=true"	 
-		 
+	bat dir
+	 		 
 }
 
 def createProject(sagHome, abeHome, deployerHome, buildVersion, projectAutomatorFile, projectAutomatorTemplate, deployerHost, deployerPort, deployerUser, deployerPwd, projName, depSetName, depMapName, depCanName, deployerRepoName, deployerRepoPath, serverAlias, serverHost, serverPort, user, pwd, version, assetPrefix) {
