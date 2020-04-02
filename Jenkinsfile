@@ -140,7 +140,7 @@ def gitCheckout(branchDir, branchName, credentialsId, gitRepoURL) {
 
 
 def createBuild(sagHome, abeHome, buildVersion, ciWorkspace) {
-	bat dir
+	bat "dir"
 	 		 
 }
 
