@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<DeployerSpec exitOnError="true" sourceType="Repository">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><DeployerSpec exitOnError="true" sourceType="Repository">
 	<DeployerServer>
 		<host>SAG-BD0KMC2.eur.ad.sag:5555</host>
 		<user>Administrator</user>
-		<pwd>manage</pwd>
+		<pwd>{AES}Y5IgMqjfvkgbg7p5VUZztw==</pwd>
 	</DeployerServer>
   <Environment>
 		<IS>
@@ -11,7 +10,7 @@
 				<host>SAG-BD0KMC2.eur.ad.sag</host>
 				<port>5555</port>
 				<user>Administrator</user>
-				<pwd>manage</pwd>
+				<pwd>{AES}Y5IgMqjfvkgbg7p5VUZztw==</pwd>
 				<useSSL>false</useSSL>
 				<version>10.3</version>
 				<installDeployerResource>true</installDeployerResource>
@@ -30,10 +29,10 @@
 	<Projects projectPrefix="">
 		<Project description="Deployment of IS artefacts" name="MRD_IS_v1.6" overwrite="true" type="Repository">
 			<ProjectProperties>
-				<Property name= "projectLocking">false</Property>
-				<Property name= "concurrentDeployment">true</Property>
-				<Property name= "ignoreMissingDependencies">true</Property>
-				<Property name= "isTransactionalDeployment">true</Property>
+				<Property name="projectLocking">false</Property>
+				<Property name="concurrentDeployment">true</Property>
+				<Property name="ignoreMissingDependencies">true</Property>
+				<Property name="isTransactionalDeployment">true</Property>
 			</ProjectProperties>
 
 			<DeploymentSet autoResolve="ignore" description="IS Deployment Set" name="ISDepSet" srcAlias="Fibonachi">
