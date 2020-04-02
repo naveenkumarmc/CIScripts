@@ -13,13 +13,13 @@
         <!--<taskdef resource="net/sf/antcontrib/antlib.xml" /> -->
   <taskdef resource="net/sf/antcontrib/antlib.xml">
     <classpath>
-       <pathelement location="C:/SoftwareAG/v10_3/common/lib/ant/lib/ant-contrib-1.0b3.jar"/>
+       <pathelement location="lib/ant-contrib-1.0b3.jar"/>
     </classpath>
   </taskdef>
   
    <taskdef uri="antlib:net.sf.antcontrib" >
     <classpath>
-       <pathelement location="C:/SoftwareAG/v10_3/common/lib/ant/lib/lib/ant-contrib-1.0b3.jar"/>
+       <pathelement location="lib/ant-contrib-1.0b3.jar"/>
     </classpath>
   </taskdef>
 
@@ -71,7 +71,8 @@
                 </loadresource>
                 <echo message="Package dir : ${package.dir}"/>
                 <echo message="Package Name : ${package.name}" />
-                <mkdir dir="${test.reports.workspace.dir}/${package.name}/resources/test/reports" />
+                <!--mkdir dir="${test.reports.workspace.dir}/${package.name}/resources/test/reports" /-->
+				<mkdir dir="${test.reports.workspace.dir}" />
                 <antcontrib:for param="test.setup.file" keepgoing="true">
                         <path>
                                 <fileset dir="${test.xml.dir}" includes="*.xml" />
@@ -80,7 +81,9 @@
                                 <basename property="file.basename" file="@{test.setup.file}" suffix=".xml" />
                                 <echo message="@{test.setup.file}" />
                                 <junit printsummary="yes" haltonfailure="no" fork="true" failureproperty="test:failure" showoutput="true" dir="${package.dir}">
+										
                                         <jvmarg value="-DwebMethods.integrationServer.name=${target.server.host}" />
+										
                                         <jvmarg value="-DwebMethods.integrationServer.port=${target.server.port}" />
                                         <jvmarg value="-DwebMethods.integrationServer.userid=${target.server.userid}" />
                                         <jvmarg value="-DwebMethods.integrationServer.password=${target.server.password}" />
