@@ -183,7 +183,7 @@ def createProject(sagHome, abeHome, deployerHome, buildVersion, projectAutomator
 		echo "assetPrefix: $assetPrefix"
 		
 
-				bat "$sagHome/common/lib/ant/bin/ant.bat -file build.xml createProjectReposiotry \
+				bat "$sagHome/common/lib/ant/bin/ant.bat -file C:/Rananjoy/SAG/Projects/Demo/CICD/CIScripts/build.xml createProjectReposiotry \
 				-Dautomator.file=$projectAutomatorFile \
 				-Dautomator.file.tpl=$projectAutomatorTemplate \
 				-Ddeployer.home=$deployerHome \

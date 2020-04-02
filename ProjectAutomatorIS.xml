@@ -38,7 +38,7 @@
 
 			<DeploymentSet autoResolve="ignore" description="IS Deployment Set" name="ISDepSet" srcAlias="Fibonachi">
 				<!--  The Composite and Component Constructs are independant of the Namespace Types. The Project Automator will support all the Namespace Types -->		
-				<Composite name="Test" srcAlias="Fibonachi" type="IS"/>
+				<Composite name="Fib*" srcAlias="Fibonachi" type="IS"/>
 			</DeploymentSet>
 			<DeploymentMap description="IS Deployment Map" name="ISDepMap"/>			
 			<MapSetMapping mapName="ISDepMap" setName="ISDepSet">				
