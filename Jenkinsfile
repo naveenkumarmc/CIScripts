@@ -149,8 +149,7 @@ def createBuild(sagHome, abeHome, buildVersion, ciWorkspace) {
         -Denable.build.IS=true \
         -Denable.archive=true" */
 	
-	bat "C:/SoftwareAG/v10_3/common/AssetBuildEnvironment/bin/build.bat
-	"
+	bat "C:/SoftwareAG/v10_3/common/AssetBuildEnvironment/bin/build.bat"
 	 		 
 }
 
