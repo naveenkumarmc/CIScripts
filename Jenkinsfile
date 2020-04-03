@@ -149,7 +149,7 @@ def createBuild(sagHome, abeHome, buildVersion, ciWorkspace) {
         -Denable.build.IS=true \
         -Denable.archive=true" */
 	
-	bat "C:/SoftwareAG/v10_3/common/AssetBuildEnvironment/bin/build.bat"
+	bat "C:/SoftwareAG/v10_3/common/AssetBuildEnvironment/bin/build.bat -Dsag.install.dir=C:/SoftwareAG/v10_3          -Dbuild.source.dir=C:/Rananjoy/SAG/Projects/Demo/CICD/jenkins_workspace/source/is/assets/IS/Packages -Dbuild.output.dir=C:/Rananjoy/SAG/Projects/Demo/CICD/jenkins_workspace/build/is         -Dbuild.version=v1.6         -Dbuild.log.fileName=C:/Rananjoy/SAG/Projects/Demo/CICD/jenkins_workspace/logs/log_v1.6.txt         -Denable.build.IS=true         -Denable.archive=true"
 	 		 
 }
 
