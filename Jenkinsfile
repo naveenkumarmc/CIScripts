@@ -140,17 +140,17 @@ def gitCheckout(branchDir, branchName, credentialsId, gitRepoURL) {
 
 
 def createBuild(sagHome, abeHome, buildVersion, ciWorkspace) {
-	/* "$abeHome/bin/build.bat \
+	"$abeHome/bin/build.bat \
 		-Dsag.install.dir=$sagHome \
         -Dbuild.source.dir=$ciWorkspace/source/is/assets/IS/Packages \
         -Dbuild.output.dir=$ciWorkspace/build/is \
         -Dbuild.version=$buildVersion \
         -Dbuild.log.fileName=$ciWorkspace/logs/log_" + "$buildVersion" + ".txt \
         -Denable.build.IS=true \
-        -Denable.archive=true" */
+        -Denable.archive=true"
 	
-	bat "cd C:/SoftwareAG/v10_3/common/AssetBuildEnvironment/bin"
-	bat "C:/SoftwareAG/v10_3/common/AssetBuildEnvironment/bin/build.bat -Dsag.install.dir=C:/SoftwareAG/v10_3          -Dbuild.source.dir=C:/Rananjoy/SAG/Projects/Demo/CICD/jenkins_workspace/source/is/assets/IS/Packages -Dbuild.output.dir=C:/Rananjoy/SAG/Projects/Demo/CICD/jenkins_workspace/build/is         -Dbuild.version=v1.6         -Dbuild.log.fileName=C:/Rananjoy/SAG/Projects/Demo/CICD/jenkins_workspace/logs/log_v1.6.txt         -Denable.build.IS=true         -Denable.archive=true -DpathCWD=C:/Rananjoy/SAG/Projects/Demo/CICD/jenkins_workspace/build/is"
+	/* bat "cd C:/SoftwareAG/v10_3/common/AssetBuildEnvironment/bin"
+	bat "C:/SoftwareAG/v10_3/common/AssetBuildEnvironment/bin/build.bat -Dsag.install.dir=C:/SoftwareAG/v10_3          -Dbuild.source.dir=C:/Rananjoy/SAG/Projects/Demo/CICD/jenkins_workspace/source/is/assets/IS/Packages -Dbuild.output.dir=C:/Rananjoy/SAG/Projects/Demo/CICD/jenkins_workspace/build/is         -Dbuild.version=v1.6         -Dbuild.log.fileName=C:/Rananjoy/SAG/Projects/Demo/CICD/jenkins_workspace/logs/log_v1.6.txt         -Denable.build.IS=true         -Denable.archive=true -DpathCWD=C:/Rananjoy/SAG/Projects/Demo/CICD/jenkins_workspace/build/is" */
 	 		 
 }
 
